@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="../static/dist/css/styles.css" />
+    <title>모두의 인강</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <h2>최근 FC 검색어를 확인해 보세요 👀</h2>
+        <form action="/log" method="get">
+          <button type="submit">Fc 검색어 로그</button>
+        </form>
+      </div>
+      <div class="links">
+        {% for language in languages %}
+        <div class="link">
+          <h4>{{language['name']}}</h4>
+          <a href="/?word={{language['name']}}">
+            <img src="{{language['img']}}" alt="..." />
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+    <footer>
+      <div class="footer__top">
+        <span>fastcampus</span>
+
+      </div>
+    </footer>
+  </body>
+</html>

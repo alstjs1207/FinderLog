@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/css/styles.css')}}"
+    />
+    <title>검색어 확인</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <h2>
+          <code>{{word}}</code>에 대한 <code>{{count}}개</code>의 검색 결과
+        </h2>
+        <div>
+          <a href="/export?word={{word}}" class="btn">Export CSV file</a>
+          <a href="/" class="btn">뒤로가기</a>
+        </div>
+      </div>
+      <section class="product-list">
+        {% for keyword in keywords %}
+        <article class="product-item">
+          <div class="product-details">
+            <h4 class="product-timestamp">{{ keyword['timestamp'] }}</h4>
+            <p class="product-description">{{ keyword['decoded_keyword'] }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+    <footer>
+      <div class="footer__top">
+        <span>yulotts</span>
+      </div>
+    </footer>
+  </body>
+</html>
