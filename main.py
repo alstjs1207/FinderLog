@@ -71,12 +71,12 @@ def getCourseLog():
 if __name__ == "__main__":
     # 정적 파일로 변환
     with app.test_request_context():
-        if not os.path.exists('static_site'):
-            os.makedirs('static_site')
+        if not os.path.exists('templates'):
+            os.makedirs('templates')
 
         pages = ['result1.html', 'index.html']
         for page in pages:
-            with open(f'static_site/{page}', 'w') as f:
+            with open(f'templates/{page}', 'w') as f:
                 f.write(render_template(page))
 
     app.run(debug=True)
