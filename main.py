@@ -79,4 +79,4 @@ if __name__ == "__main__":
             with open(f'static_site/{page}', 'w') as f:
                 f.write(render_template(page))
 
-    app.run(host="0.0.0.0", port="8282", debug=True)
+    app.run(debug=True)
